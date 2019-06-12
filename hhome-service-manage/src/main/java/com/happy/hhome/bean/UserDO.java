@@ -4,17 +4,35 @@ package com.happy.hhome.bean;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 @EqualsAndHashCode
 @ToString
+@Table(name="user")
 public class UserDO {
+    @Id
+    @Column(name = "user_id")
     private Integer userId;
+
+    @Column(name = "user_name")
     private String userName;
+
+    @Column(name = "nick_name")
     private String nickName;
+
+    @Column(name = "password")
     private String password;
+
+    @Column(name = "enabled")
     private String enabled;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "user_face")
     private String userFace;
-    private String regTime;
 
     public Integer getUserId() {
         return userId;
@@ -70,13 +88,5 @@ public class UserDO {
 
     public void setUserFace(String userFace) {
         this.userFace = userFace;
-    }
-
-    public String getRegTime() {
-        return regTime;
-    }
-
-    public void setRegTime(String regTime) {
-        this.regTime = regTime;
     }
 }
