@@ -6,6 +6,7 @@ import com.happy.hhome.bean.UserQuery;
 import com.happy.hhome.converter.user.UserConverter;
 import com.happy.hhome.mapper.UserMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
 
 import javax.annotation.Resource;
 
@@ -48,8 +49,9 @@ public class UserServiceImpl implements UserService {
         if (0 != count) {
 //            throw new Exception("用户名已存在");
         }
-
+        userDTO.setPassword(DigestUtils.md5DigestAsHex(userDTO.getPassword().getBytes()));
         userDO = userConverter.toDO(userDTO);
+
         userMapper.insert(userDO);
     }
 }

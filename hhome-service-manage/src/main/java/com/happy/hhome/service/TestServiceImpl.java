@@ -16,7 +16,7 @@ public class TestServiceImpl implements TestService {
     public String testHah() {
         UserDO userDO = new UserDO();
         userDO.setUserId(1);
-        List<UserDO> userDOList = userMapper.selectAll();
-        return userDOList.toString();
+        userDO = userMapper.selectByPrimaryKey(userDO);
+        return userDO.toString();
     }
 }

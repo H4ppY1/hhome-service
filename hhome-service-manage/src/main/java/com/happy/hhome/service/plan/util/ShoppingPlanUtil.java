@@ -2,7 +2,6 @@ package com.happy.hhome.service.plan.util;
 
 import com.happy.hhome.bean.plan.ShoppingPlanDO;
 import com.happy.hhome.bean.plan.ShoppingPlanDetailDO;
-import com.happy.hhome.bean.plan.ShoppingPlanDetailDTO;
 import com.happy.hhome.constants.Constants;
 import com.happy.hhome.constants.PlanConstants;
 import com.happy.hhome.mapper.plan.ShoppingPlanDetailMapper;
